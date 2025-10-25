@@ -1,0 +1,144 @@
+/* =========================
+   Design System
+========================= */
+:root {
+  --cor-primaria: #004080;
+  --cor-secundaria: #00aaff;
+  --cor-neutra-clara: #f4f4f4;
+  --cor-neutra-escura: #333333;
+  --cor-sucesso: #28a745;
+  --cor-alerta: #ffc107;
+  --cor-erro: #dc3545;
+  --cor-info: #17a2b8;
+
+  --espacamento-pequeno: 16px;
+  --espacamento-medio: 24px;
+  --espacamento-grande: 48px;
+
+  --fonte-pequena: 16px;
+  --fonte-media: 18px;
+  --fonte-grande: 32px;
+  --fonte-titulo: 48px;
+}
+
+/* =========================
+   Reset + Base
+========================= */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--cor-neutra-clara);
+  color: var(--cor-neutra-escura);
+}
+
+header, footer {
+  background-color: var(--cor-primaria);
+  color: white;
+  padding: var(--espacamento-pequeno);
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: var(--espacamento-pequeno);
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: background 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: var(--cor-secundaria);
+  border-radius: 4px;
+}
+
+/* =========================
+   Layout com Flexbox
+========================= */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacamento-medio);
+  padding: var(--espacamento-medio);
+  max-width: 960px;
+  margin: auto;
+  background-color: white;
+}
+
+/* =========================
+   Cards Responsivos
+========================= */
+section {
+  border: 1px solid var(--cor-neutra-escura);
+  border-radius: 8px;
+  padding: var(--espacamento-pequeno);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+section:hover {
+  transform: scale(1.02);
+}
+
+/* =========================
+   Imagens Responsivas
+========================= */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* =========================
+   Formulário
+========================= */
+form {
+  display: grid;
+  gap: var(--espacamento-pequeno);
+}
+
+input, button {
+  padding: 8px;
+  font-size: var(--fonte-pequena);
+  border: 1px solid var(--cor-neutra-escura);
+  border-radius: 4px;
+}
+
+button {
+  background-color: var(--cor-primaria);
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--cor-secundaria);
+}
+
+/* =========================
+   Responsividade
+========================= */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  main {
+    padding: var(--espacamento-pequeno);
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: var(--fonte-media);
+  }
+
+  section {
+    font-size: var(--fonte-pequena);
+  }
+}
