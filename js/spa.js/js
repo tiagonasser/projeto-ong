@@ -1,0 +1,15 @@
+function carregarPagina(pagina) {
+  fetch(pagina)
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('conteudo').innerHTML = html;
+    });
+}
+
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const pagina = e.target.getAttribute('href');
+    carregarPagina(pagina);
+  });
+});

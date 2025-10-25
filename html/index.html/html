@@ -35,5 +35,8 @@
   <footer>
     <p>&copy; 2025 ONG Esperança</p>
   </footer>
+
+    <script src="../js/spa.js"></script>
+    <script src="../js/validacao.js"></script>
 </body>
 </html>

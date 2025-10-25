@@ -1,0 +1,22 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('form');
+
+  form.addEventListener('submit', e => {
+    const nome = form.querySelector('#nome');
+    const email = form.querySelector('#email');
+    const erro = [];
+
+    if (nome.value.trim() === '') {
+      erro.push('Nome é obrigatório.');
+    }
+
+    if (!email.value.includes('@')) {
+      erro.push('Email inválido.');
+    }
+
+    if (erro.length > 0) {
+      e.preventDefault();
+      alert(erro.join('\n'));
+    }
+  });
+});
